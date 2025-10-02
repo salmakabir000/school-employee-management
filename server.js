@@ -22,15 +22,20 @@ app.use((req, _res, next) => {
 });
 
 // ✅ MongoDB Connection
-mongoose.connect("mongodb://127.0.0.1:27017/school-ems", {
+const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/school-ems";
+
+mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
 mongoose.connection.once("open", () => {
   console.log("✅ Connected to MongoDB");
 });
 
-
+mongoose.connection.on("error", (err) => {
+  console.error("MongoDB connection error:", err);
+});
 const leaveSchema = new mongoose.Schema({
   employee: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   startDate: Date,
