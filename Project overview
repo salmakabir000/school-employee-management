@@ -1,0 +1,64 @@
+
+School Employee Management - React CRUD Project
+
+Project Overview:
+- React-based CRUD application for managing school employees and leave requests.
+- Focus on UI design, state management, API integration, and security.
+
+Project Scope:
+
+ 1 Employee Information Management:
+  - Create: Add new employee records (name, ID, department, position, contact, start date)
+  - Read: View employee records
+  - Update: Edit existing employee records
+  - Delete: Remove employee records
+
+ 2️ Leave Request Management:
+  - Create: Employees submit leave requests (type, start/end date, reason)
+  - Read: Managers/Admins view leave requests with status (Pending, Approved, Rejected)
+  - Update: Managers/Admins approve or reject requests
+  - Delete: Employees delete pending requests
+
+ 3️ User Authentication & Authorization:
+  - Basic auth system
+  - Role-based access control (Admin, Manager, Employee)
+
+    4️ Database Integration:
+  - Connect to backend API (Node.js)
+  - Store/retrieve data from DB (MongoDB)
+  - CRUD operations via API
+
+    5️ UI Design:
+  - Clean, intuitive React components
+  - Forms for data entry/editing
+  - Tables/lists for records
+  - Dashboard for key metrics
+  - Responsive design
+
+    6️ State Management:
+  - useState
+
+    7️ Data Validation:
+  - Client-side validation to ensure data integrity
+
+
+Role-Based Permissions Overview
+
+
+ Admin:
+  - Add, edit, view, and delete employee records
+  - View, approve, and reject leave requests
+  - Full access to dashboard and system metrics
+
+ Manager:
+  - View employee records
+  - View leave requests
+  - Approve or reject leave requests
+ 
+
+ Employee:
+  - View their own employee record
+  - View employee records
+  - Submit leave requests
+  - Delete their pending leave requests
+  - View status of own leave requests
