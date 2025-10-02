@@ -8,8 +8,8 @@ import User from "./models/User.js";
 import employeeroute from "./src/services/employeeroute.js";
 
 const app = express();
-const PORT = 4000;
-const SECRET = "supersecretkey";
+const PORT = process.env.PORT || 4000;
+const SECRET = process.env.JWT_SECRET || "supersecretkey";
 
 // Middleware
 app.use(cors({
