@@ -1,2 +1,2 @@
-const API_URL = "http://localhost:4000"; // backend base url
+const API_URL = "https://school-employee-management.onrender.com"; // backend base url
 export default API_URL;

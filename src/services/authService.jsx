@@ -1,5 +1,5 @@
 // src/services/authService.js
-const API_URL = "http://localhost:4000";
+const API_URL = "https://school-employee-management.onrender.com";
 
 export async function login(username, password) {
   const res = await fetch(`${API_URL}/login`, {

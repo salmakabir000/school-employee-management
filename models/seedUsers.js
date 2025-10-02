@@ -3,7 +3,8 @@ import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 import User from "./User.js"; 
 
-const MONGO_URI = "mongodb://127.0.0.1:27017/school-ems";
+const MONGO_URI = "mongodb+srv://salmakabir000_db_user:0sVaMhyajKxBGNE9@school-ems.iqsxkfg.mongodb.net/school-ems?retryWrites=true&w=majority";
+
 
 async function seed() {
   try {

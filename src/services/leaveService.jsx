@@ -1,6 +1,6 @@
 import { getToken } from "./authService";
 
-const API_URL = "http://localhost:4000/leave";
+const API_URL = "https://school-employee-management.onrender.com/leave";
 
 // Helper: include token in headers
 function getAuthHeaders() {
@@ -12,7 +12,7 @@ function getAuthHeaders() {
   };
 }
 
-// 🔹 Get all leaves
+// Get all leaves
 export async function getLeaves() {
   const token = getToken();
   if (!token) throw new Error("No token found");
@@ -29,7 +29,7 @@ export async function getLeaves() {
   return res.json();
 }
 
-// 🔹 Add new leave request (Employee only)
+// Add new leave request (Employee only)
 export async function addLeave(leave) {
   const res = await fetch(API_URL, {
     method: "POST",

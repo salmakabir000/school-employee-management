@@ -1,9 +1,9 @@
 // src/services/employeeService.jsx
 import { getToken, logout } from "./authService";
 
-const API_URL = "http://localhost:4000/employees";
+const API_URL = "https://school-employee-management.onrender.com/employees";
 
-// 🔹 Helper: Generate Employee ID
+// Generate Employee ID
 function generateEmployeeId(departmentCategory, schoolDepartment) {
   let base = departmentCategory || "GEN";
   if (departmentCategory === "Academics" && schoolDepartment) {
@@ -21,9 +21,9 @@ function generateEmployeeId(departmentCategory, schoolDepartment) {
   return `${initials}${schoolCode}${rand}`;
 }
 
-// src/services/employeeService.jsx
 
-// 🔹 Helper: Fetch with auth, role check & improved error handling
+
+//  Fetch with auth, role check & improved error handling
 async function fetchWithAuth(url, options = {}, allowedRoles = []) {
   const token = getToken();
   if (!token) throw new Error("No token found. Please login.");
@@ -59,7 +59,7 @@ async function fetchWithAuth(url, options = {}, allowedRoles = []) {
     throw new Error(`Error ${res.status}: ${data.message || res.statusText}`);
   }
 
-  // Frontend role validation (only if roles are explicitly passed)
+  // Frontend role validation
   if (allowedRoles.length && data.userRole) {
     const role = data.userRole.toLowerCase();
     const allowed = allowedRoles.map(r => r.toLowerCase());
@@ -71,13 +71,13 @@ async function fetchWithAuth(url, options = {}, allowedRoles = []) {
   return data;
 }
 
-// 🔹 CRUD Operations
+//CRUD Operations
 export async function getEmployees() {
   // Everyone can fetch employees → no allowedRoles passed
   return fetchWithAuth(API_URL); 
 }
 
-// Example: Admin-only action
+//Admin-only action
 export async function addEmployee(employee) {
   const employeeWithId = {
     ...employee,
