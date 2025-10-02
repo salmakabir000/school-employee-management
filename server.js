@@ -12,7 +12,11 @@ const PORT = 4000;
 const SECRET = "supersecretkey";
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: ["https://school-employee-management.vercel.app", "http://localhost:5173"],
+  credentials: true,
+}));
+
 app.use(express.json());
 app.use("/employees", employeeroute);
 
