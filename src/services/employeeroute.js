@@ -1,6 +1,7 @@
 // src/services/employeeroute.js
 import express from "express";
 import User from "../../models/User.js";
+import bcrypt from "bcryptjs";
 
 // middleware imports from server.js (we’ll pass them here too)
 import { authenticate, authorize } from "../middleware/auth.js";
@@ -12,9 +13,11 @@ router.post("/", authenticate, authorize(["Admin"]), async (req, res) => {
   try {
     const { name, departmentCategory, schoolDepartment, position, contact, startDate, employeeId } = req.body;
 
+    const hashedPassword = bcrypt.hashSync("defaultpassword123", 8);
+
     const newEmployee = new User({
       username: employeeId, // use employeeId as username
-      password: "defaultpassword123",
+      password: hashedPassword,
       role: "Employee",
       name,
       departmentCategory,
