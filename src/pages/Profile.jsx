@@ -33,7 +33,7 @@ export default function Profile() {
         const token = localStorage.getItem("token");
         if (!token) throw new Error("No token found. Please login.");
 
-        const res = await fetch("http://localhost:4000/profile", {
+        const res = await fetch("https://school-employee-management.onrender.com/profile", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
