@@ -100,35 +100,42 @@ app.post("/register", async (req, res) => {
   }
 });
 
-// Login
+// User Login
 app.post("/login", async (req, res) => {
-  const { username, password } = req.body;
-  const user = await User.findOne({ username });
-  console.log(user.role);
-  if (!user) return res.status(401).json({ message: "User not found" });
+  try {
+    const { username, password } = req.body;
+    const user = await User.findOne({ username });
 
-  // Compare hashed password
-  const isValid = bcrypt.compareSync(password, user.password);
-  if (!isValid) return res.status(401).json({ message: "Invalid password" });
+    if (!user) return res.status(401).json({ message: "User not found" });
 
-  const token = jwt.sign({ id: user._id, role: user.role.trim() }, SECRET, { expiresIn: "2h" });
+    const isValid = bcrypt.compareSync(password, user.password);
+    if (!isValid) return res.status(401).json({ message: "Invalid password" });
 
-  res.json({
-    token,
-    user: {
-      id: user._id,
-      username: user.username,
-      role: user.role,
-      name: user.name,
-      employeeId: user.employeeId,
-      departmentCategory: user.departmentCategory,
-      schoolDepartment: user.schoolDepartment,
-      position: user.position,
-      contact: user.contact,
-      startDate: user.startDate,
-    },
-  });
+    const token = jwt.sign({ id: user._id, role: user.role.trim() }, SECRET, {
+      expiresIn: "2h",
+    });
+
+    res.json({
+      token,
+      user: {
+        id: user._id,
+        username: user.username,
+        role: user.role,
+        name: user.name,
+        employeeId: user.employeeId,
+        departmentCategory: user.departmentCategory,
+        schoolDepartment: user.schoolDepartment,
+        position: user.position,
+        contact: user.contact,
+        startDate: user.startDate,
+      },
+    });
+  } catch (error) {
+    console.error("Login error:", error);
+    res.status(500).json({ message: "Server error" });
+  }
 });
+
 
 // Profile
 app.get("/profile", authenticate, async (req, res) => {
