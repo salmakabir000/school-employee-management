@@ -111,9 +111,9 @@ export default function Dashboard() {
         </Typography>
         <Stack spacing={1}>
           {user.role !== 'Employee' && <Typography>📌 Pending leave approvals: {pendingCount}</Typography>}
-          <Typography>📅 Staff meeting – Sep 25</Typography>
-          <Typography>⚠️ System maintenance – Sep 28</Typography>
-          <Typography>📌 Submit monthly reports – Sep 30</Typography>
+          <Typography>📅 Staff meeting – Oct 25</Typography>
+          <Typography>⚠️ System maintenance – Oct 28</Typography>
+          <Typography>📌 Submit monthly reports – Oct 30</Typography>
         </Stack>
       </Card>
 
