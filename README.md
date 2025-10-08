@@ -1,12 +1,44 @@
-# React + Vite
+# 🏫 School Employee Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack web application built with **React** and **Node.js (Express)** for managing school employees, their profiles, and leave requests — designed to simplify HR tasks and improve administrative efficiency.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo
+🔗 [View Live Project](https://school-employee-management.vercel.app/)  
+🔗 [Backend API (Render)](https://school-employee-management.onrender.com/)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🖥️ Features
+
+- 👩‍🏫 **Employee Management:** Add, edit, and delete employee records.  
+- 🕒 **Leave Requests:** Staff can apply for leave, and admins can approve or reject.  
+- 📊 **Dashboard Overview:** Visual display of employees and leave statuses.  
+- 🔐 **Authentication System:** Secure login for both employees and admins.  
+- 💾 **Database Integration:** MongoDB for persistent data storage.  
+- 🎨 **Modern UI:** Responsive design using React and TailwindCSS.
+
+---
+
+## 🧠 Tech Stack
+
+| Category | Technologies |
+|-----------|--------------|
+| Frontend | React, TailwindCSS |
+| Backend | Node.js, Express.js |
+| Database | MongoDB (Mongoose) |
+| Deployment | Vercel (Frontend), Render (Backend) |
+| Version Control | Git + GitHub |
+
+---
+
+## 🎨 Colour Palette
+[View on Coolors](https://coolors.co/3b82f6-2563eb-f97316-f472b6-dc2626-f9fafb-111827)
+
+---
+
+## Folders
+- 📁 **Screenshots/** → Images showing the app in live state.
+- 📁 **Presentation/** → PDF presentation explaining features, and tools
+
