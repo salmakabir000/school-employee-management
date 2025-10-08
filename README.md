@@ -25,7 +25,7 @@ A full-stack web application built with **React** and **Node.js (Express)** for 
 
 | Category | Technologies |
 |-----------|--------------|
-| Frontend | React, TailwindCSS |
+| Frontend | React, Material UI |
 | Backend | Node.js, Express.js |
 | Database | MongoDB (Mongoose) |
 | Deployment | Vercel (Frontend), Render (Backend) |
